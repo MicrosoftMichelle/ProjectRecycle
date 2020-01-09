@@ -30,6 +30,15 @@ Non-Azure things included:
 2. [Raspberry Pi SenseHat](https://www.raspberrypi.org/documentation/hardware/sense-hat/) which includes a bunch of sensors you can just pop onto the raspberry pi if you don't have an electrical engineering background to wire things up. 
 3. [Raspberry Pi Camera](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) which is basically a camera you can attach to the raspberry pi. 
 4. [Twilio](https://www.twilio.com/) is a cloud-based communications platform used to send SMS or calls to alert someone if something with the raspberry pi goes wrong. 
+5. Mouse, Keyboard, Power source.
+6. WiFi
+
+And now, the fun part begins...setting up the Raspberry Pi: 
+> Your Raspberry Pi may or may not come with the [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) operating system. If it doesn't, you need to get an SD card, follow that link to install it. 
+> If you haven't already, pop the sensehat on the raspberry pi and attach the pi camera as well. 
+> Now connect the physical mouse and keyboard to the raspberry pi and plug raspberry pi into a power source. 
+> Once you're in, find the Wifi symbol and connect the raspberry pi to the Wifi. You can keep using the mouse and keyboard to navigate the pi but I like to install [VNC](https://www.realvnc.com/en/connect/download/viewer/) so I could remote access my raspberry pi. 
+> Check that your raspberry pi has [Python](https://www.python.org/) installed, if not, install it. 
 
 
 
