@@ -25,6 +25,11 @@ All the components in blue are Azure services. I'll include links to what each o
 8. [Azure IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub/) is used to connect and communicate with the raspberry pi. 
 9. [Azure Stream Analytics](https://docs.microsoft.com/en-us/azure/stream-analytics/) processes lots and lots of data by streaming all the high-speed, high-voulme sensor data from the raspberry pi into the Azure SQL database. 
 
+Non-Azure things included: 
+1. [Raspberry Pi](https://www.raspberrypi.org/documentation/) which is essentially a mini computer, an IoT device. 
+2. [Raspberry Pi SenseHat](https://www.raspberrypi.org/documentation/hardware/sense-hat/) which includes a bunch of sensors you can just pop onto the raspberry pi if you don't have an electrical engineering background to wire things up. 
+3. [Raspberry Pi Camera](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) which is basically a camera you can attach to the raspberry pi. 
+4. [Twilio](https://www.twilio.com/) is a cloud-based communications platform used to send SMS or calls to alert someone if something with the raspberry pi goes wrong. 
 
 
 
