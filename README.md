@@ -46,7 +46,7 @@ Non-Azure things included:
 
 ## Setting up all your Azure Resources: 
 > Let's start with a Resource Group. The first thing you want to provision is a Resource Group which is a logical container or 'folder' to group all the resources related to this project. 
-> [Resource Group](images/resource-group.jpg)
+> ![Resource Group](images/resource-group.jpg)
 
 
 
