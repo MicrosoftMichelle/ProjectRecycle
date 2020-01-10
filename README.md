@@ -55,8 +55,13 @@ Non-Azure things included:
 > ![Azure IoT Hub Devices](images/iot-hub-devices.jpg)
 > ![Create a new Iot Hub device](images/create-device-in-iot-hub.jpg)
 
-> Once your device has been provisioned, go into it to grab the connection string. Just use the primary connection string.: 
+> Once your device has been provisioned, go into it to grab the connection string. Just use the primary connection string: 
 > ![IoT Hub Device Connection String](images/iot-hub-connection-strings.jpg)
+
+> Now, what you want to do is take that connection string and add it to the following code on the Raspberry Pi: 
+> ```python
+> iot_hub_connection_string = "{insert-iot-hub-connection-string}"
+
 
 
 
