@@ -42,12 +42,13 @@ Non-Azure things included:
 
 ## Let's load some code into your Raspberry Pi: 
 > Now, go to the browser on the Raspberry Pi. Find this GitHub Repo and pull down the code the says ['RaspberryPiCode.py'](RaspberryPiCode.py) onto the device. 
-> I just saved my to the desktop of the Raspberry Pi for ease of access.
+> I just saved mine to the desktop of the Raspberry Pi for ease of access.
 
 ## Setting up all your Azure Resources: 
 > Let's start with a Resource Group. The first thing you want to provision is a Resource Group which is a logical container or 'folder' to group all the resources related to this project. 
 > ![Resource Group](images/resource-group.jpg)
-
+> Next, we want to provision an Azure IoT Hub so that we can connect to our Raspberry Pi. 
+> ![Azure IoT Hub](images/iot-hub.jpg)
 
 
 
