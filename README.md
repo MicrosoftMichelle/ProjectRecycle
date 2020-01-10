@@ -33,12 +33,17 @@ Non-Azure things included:
 5. Mouse, Keyboard, Power source.
 6. WiFi
 
-And now, the fun part begins...setting up the Raspberry Pi: 
+## And now, the fun part begins...setting up the Raspberry Pi: 
 > Your Raspberry Pi may or may not come with the [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) operating system. If it doesn't, you need to get an SD card, follow that link to install it. 
 > If you haven't already, pop the Sensehat on the Raspberry Pi and attach the Pi camera as well. 
 > Now connect the physical mouse and keyboard to the Raspberry Pi and plug Raspberry Pi into a power source. 
 > Once you're in, find the WiFi symbol and connect the Raspberry Pi to the WiFi. You can keep using the mouse and keyboard to navigate the Pi but I like to install [VNC](https://www.realvnc.com/en/connect/download/viewer/) so I could remote access my Raspberry Pi. 
 > Check that your Raspberry Pi has [Python](https://www.python.org/) installed, if not, install it. 
+
+## Let's load some code into your Raspberry Pi: 
+> Now, go to the browser on the Raspberry Pi. Find this GitHub Repo and pull down the code the says 'RaspberryPiCode.py' onto the device. 
+> I just saved my to the desktop of the Raspberry Pi for ease of access. 
+
 
 
 
