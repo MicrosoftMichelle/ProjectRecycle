@@ -41,7 +41,7 @@ Non-Azure things included:
 > Check that your Raspberry Pi has [Python](https://www.python.org/) installed, if not, install it. 
 
 ## Let's load some code into your Raspberry Pi: 
-> Now, go to the browser on the Raspberry Pi. Find this GitHub Repo and pull down the code the says 'RaspberryPiCode.py' onto the device. 
+> Now, go to the browser on the Raspberry Pi. Find this GitHub Repo and pull down the code the says ['RaspberryPiCode.py'](RaspberryPiCode.py) onto the device. 
 > I just saved my to the desktop of the Raspberry Pi for ease of access. 
 
 
