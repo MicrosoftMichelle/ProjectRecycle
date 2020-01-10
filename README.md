@@ -44,7 +44,7 @@ Non-Azure things included:
 > Now, go to the browser on the Raspberry Pi. Find this GitHub Repo, go into the 'code' folder and pull down the code the says ['RaspberryPiCode.py'](code/RaspberryPiCode.py) onto the device. 
 > I just saved mine to the desktop of the Raspberry Pi for ease of access.
 
-## Setting up all your Azure Resources: 
+## Setting up IoT on Azure: 
 > Let's start with a Resource Group. The first thing you want to provision is a Resource Group which is a logical container or 'folder' to group all the resources related to this project: 
 > ![Resource Group](images/resource-group.jpg)
 
@@ -62,6 +62,12 @@ Non-Azure things included:
 > ```python
 > iot_hub_connection_string = "{insert-iot-hub-connection-string}"
 
+## Training your own Custom Vision model: 
+> First of all, we need to deploy a Cognitive Services on Azure: 
+> ![Cognitive Services for Custom Vision](images/cognitive-services-custom-vision.jpg)
+
+> Now go sign into [Custom Vision](https://www.customvision.ai/) and create a new project: 
+> ![Create a new project in Custom Vision](images/custom-vision-new-project.jpg)
 
 
 
