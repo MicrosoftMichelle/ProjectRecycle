@@ -12,7 +12,7 @@ With that in mind, I began Project Recycle....
 
 
 Let's start with the architecture diagram (my very first one I must add): 
-![Project Recycle Architecture Diagram](project-recycle-architecture.jpg)
+![Project Recycle Architecture Diagram](images/project-recycle-architecture.jpg)
 
 All the components in blue are Azure services. I'll include links to what each of those components are if you want to read up on them: 
 1. [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/?view=azure-devops) was used to facilitate the source control, continuous integration and deployment of Project Recycle.
