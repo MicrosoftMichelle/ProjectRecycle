@@ -45,13 +45,18 @@ Non-Azure things included:
 > I just saved mine to the desktop of the Raspberry Pi for ease of access.
 
 ## Setting up all your Azure Resources: 
-> Let's start with a Resource Group. The first thing you want to provision is a Resource Group which is a logical container or 'folder' to group all the resources related to this project. 
+> Let's start with a Resource Group. The first thing you want to provision is a Resource Group which is a logical container or 'folder' to group all the resources related to this project: 
 > ![Resource Group](images/resource-group.jpg)
-> Next, we want to provision an Azure IoT Hub so that we can connect to our Raspberry Pi. 
+
+> Next, we want to provision an Azure IoT Hub so that we can connect to our Raspberry Pi: 
 > ![Azure IoT Hub](images/iot-hub.jpg)
-> Create a device in your Azure IoT Hub by navigating to 'IoT Devices' and clicking on '+ New'
+
+> Create a device in your Azure IoT Hub by navigating to 'IoT Devices' and clicking on '+ New': 
 > ![Azure IoT Hub Devices](images/iot-hub-devices.jpg)
 > ![Create a new Iot Hub device](images/create-device-in-iot-hub.jpg)
+
+> Once your device has been provisioned, go into it to grab the connection string. Just use the primary connection string.: 
+> ![IoT Hub Device Connection String](images/iot-hub-connection-strings.jpg)
 
 
 
