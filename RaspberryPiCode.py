@@ -27,7 +27,7 @@ import iothub_client
 from iothub_client import IoTHubClient, IoTHubClientError, IoTHubTransportProvider, IoTHubClientResult
 from iothub_client import IoTHubMessage, IoTHubMessageDispositionResult, IoTHubError, DeviceMethodReturnValue
 
-iot_hub_connection_string = "HostName=projectrecycle.azure-devices.net;DeviceId=projectrecycleiotdeviceID;SharedAccessKey=O2cWv72KSoPsMtJ+hekrDgSUqt1gkfcBTW4Y/ZdG6cY="
+iot_hub_connection_string = "{insert-iot-hub-connection-string}"
 mqtt_protocol = IoTHubTransportProvider.MQTT
 iot_message_timeout = 10000
 
