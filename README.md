@@ -139,6 +139,13 @@ Non-Azure things included:
 > You can also do this in Azure Storage Explorer if you have it installed already: 
 > ![Create a blob container using Azure Storage Explorer](images/azure-storage-explorer.jpg)
 
+> Now, navigate to Containers under Blob service, find the container you just created, click on the 3 dots at the end and go into Container Properties: 
+> ![Go into container properties](images/storage-account-container-properties.jpg)
+
+> Copy the URL and insert it into two places in the ['RaspberryPiCode.py'](code/RaspberryPiCode.py) code: 
+> ```Python
+> storage_account_url = "{insert-storage-account-url}"
+
 
 
 
