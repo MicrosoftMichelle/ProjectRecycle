@@ -69,21 +69,43 @@ Non-Azure things included:
 > Now go sign into [Custom Vision](https://www.customvision.ai/) and create a new project: 
 > ![Create a new project in Custom Vision](images/custom-vision-new-project.jpg)
 
-> You can truly CUSTOMISE this by creating your own dataset. Or, if like me, you can't be bothered. You can use the ones I used. I'm not a data scienctist so I sourced most of these off Google Images. You can combine the ones I've used here with your own as well. 
+> You can truly CUSTOMISE this by creating your own dataset. Or, if like me, you can't be bothered. 
+> You can use the ones I used.
+> I'm not a data scienctist so I sourced most of these off Google Images. 
+> You can combine the ones I've used here with your own as well. 
+
 > For training data, download it from [here](https://projectrecycledata.blob.core.windows.net/customvisionmodeldata/training-data.zip).
+
 > For testing data, download it from [here](https://projectrecycledata.blob.core.windows.net/customvisionmodeldata/testing-data.zip).
 
 > For the training data, I have put them into categories within each label:
 > ![Training data categories](images/general-data-category.jpg)
+
 > Again, you can use all of the image data here, some of it, none of it, or add your own to it. This one for example will all be classified (labelled) as General Waste in the model. These are the only ones I could think of but of course there is more than that (otherwise we would have less rubbish in the world). Just keep in mind that the more data we have, the better our model would perform in the real world. 
 
 > Now, go back to [Custom Vision](https://www.customvision.ai/) and navigate into the new project you have just created. 
 > Once you've gathered your data sets, add these images to your Custom Vision model: 
 > ![Adding images to Custom Vision model](images/custom-vision-model-add-images.jpg)
+
 > And give it a label: general, recycle, or organic 
 > ![Classifying the images by a label](images/custom-vision-model-upload-images.jpg)
+
 > Repeat for the other labels until you have added all images for all 3 labels (general, recycle, organic) into the project: 
 > ![Custom vision model with all images uploaded](images/general-waste-training.jpg)
+
+> Then hit the 'Train' button to train your model:
+> ![Training your model](images/custom-vision-model-training.jpg)
+
+> Once trained, you can see how well your model performed on the training data: 
+> ![Training data performance](images/custom-vision-model-training-iterations.jpg)
+
+> You can save multiple iterations by using a combination of different data sets as well as perform a 'Quick test' with testing data to see how well your model performs on image data it has never seen before. You can perform the test by providing an image URL or uploading an image from your local computer: 
+> ![Quick test on the model](images/custom-vision-model-quick-test.jpg)
+
+> Once you're satisfied with the performance, you can choose to publish that specific Iteration of the model. This will then give you a prediction API which you can then call to use your model: 
+> ![Publish your model to get Prediction API](images/custom-vision-model-prediction-url.jpg)
+
+
 
 
 
