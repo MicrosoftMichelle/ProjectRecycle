@@ -141,6 +141,7 @@ Non-Azure things included:
 
 > Now, navigate to Containers under Blob service, find the container you just created, click on the 3 dots at the end and go into Container Properties: 
 > ![Go into container properties](images/storage-account-container-properties.jpg)
+> ![Copy the url](images/storage-account-container-url.jpg)
 
 > Copy the URL and insert it into two places in the ['RaspberryPiCode.py'](code/RaspberryPiCode.py) code: 
 > ```Python
