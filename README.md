@@ -124,7 +124,7 @@ Non-Azure things included:
 > ![Create an Azure storage account](images/create-azure-storage-account.jpg)
 
 > Once your Storage account has been created, navigate to 'Access keys' and copy the 'Storage account name' and 'Key' from key1 and insert it into account_name and account_key respectively in the ['RaspberryPiCode.py'](code/RaspberryPiCode.py) code:
-> [Copy your storage account keys and connection strings](images/storage-account-secrets.jpg)
+> ![Copy your storage account keys](images/storage-account-secrets.jpg)
 > ```Python 
 > # Blob storage connection:
 > def blob(file_path, blob_name):
