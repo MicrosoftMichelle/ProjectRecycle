@@ -147,6 +147,31 @@ Non-Azure things included:
 > ```Python
 > storage_account_url = "{insert-storage-account-url}"
 
+## Create Azure SQL Database: 
+> We want a way to store the data in a structured or semi-structured way so that on the other end, we can query it from an application later on. 
+
+> First, we will create an Azure SQL Database from the portal: 
+> ![Create Azure SQL Database](images/create-sql-database.jpg)
+
+> When you're creating an Azure SQL Database for the first time, you'll need to set up a SQL server: 
+> ![Create a new SQL server](images/create-sql-server.jpg)
+
+> You'll also want to scale it down because the default is anticipating Enterprise needs (which will incur a massive bill for a personal project): 
+> ![Scale your database needs down](images/scale-database-down.jpg)
+
+> Next, we want to create a Table in our database to store data in a structured format. Copy this SQL query: 
+> ```SQL
+> CREATE TABLE Predictions(
+>	PredictionId int IDENTITY(1,1) NOT NULL,
+>	ImageUrl text NOT NULL,
+>	GeneralWasteProb float NOT NULL,
+>	RecycleProb float NOT NULL,
+>	OrganicProb float NOT NULL,
+>	ClassifiedAs varchar(50) NULL
+> )
+
+
+
 
 
 
