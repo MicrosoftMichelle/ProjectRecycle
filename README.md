@@ -105,7 +105,7 @@ Non-Azure things included:
 > Once you're satisfied with the performance, you can choose to publish that specific Iteration of the model. This will then give you a prediction API which you can then call to use your model: 
 > ![Publish your model to get Prediction API](images/custom-vision-model-prediction-url.jpg)
 
-> Now, grab the Prediction-Key and insert it into prediction_key in ['RaspberryPiCode.py'](code/RaspberryPiCode.py):
+> Now, grab the Prediction-Key and insert it into prediction_key in ['RaspberryPiCode.py'](code/RaspberryPiCode.py) code:
 > ```Python
 > def custom_vision(image_name):
 >    # Establishing key connections: 
@@ -117,6 +117,27 @@ Non-Azure things included:
 
 > Now, go to the Settings of your custom vision model project to find the training_key, ENDPOINT, and pid which is under 'Key', 'Endpoint' and 'Project Id' respectively: 
 > ![Find training key, endpoint, and project id](images/custom-vision-settings.jpg)
+
+## Set up Azure Storage:
+> Now let's create an Azure Storage account to store all the images we capture from the Raspberry Pi. 
+> First, go to your Azure portal and look up 'Storage account' and create one following these configurations: 
+> ![Create an Azure storage account](images/create-azure-storage-account.jpg)
+
+> Once your Storage account has been created, navigate to 'Access keys' and copy the 'Storage account name' and 'Key' from key1 and insert it into account_name and account_key respectively in the ['RaspberryPiCode.py'](code/RaspberryPiCode.py) code:
+> [Copy your storage account keys and connection strings](images/storage-account-secrets.jpg)
+> ```Python 
+> # Blob storage connection:
+> def blob(file_path, blob_name):
+>    block_blob_service = BlockBlobService(account_name='{insert-account-name}', account_key='{insert-account-key}')
+>    container_name = 'iotimage'
+>    block_blob_service.create_blob_from_path(container_name, blob_name, file_path, 
+> content_settings=ContentSettings(content_type='image/jpeg'))
+
+> Now, navigate to Storage Explorer, right-click on Blob Containers and click 'Create blob container' and name it 'iotimage':
+> ![Create a blob container](images/storage-account-create-container.jpg)
+
+> You can also do this in Azure Storage Explorer if you have it installed already: 
+> ![Create a blob container using Azure Storage Explorer](images/azure-storage-explorer.jpg)
 
 
 
