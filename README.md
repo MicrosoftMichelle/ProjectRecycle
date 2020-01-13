@@ -113,7 +113,6 @@ Non-Azure things included:
 >    prediction_key = "{insert-prediction-key}"    
 >    storage_account_url = "{insert-storage-account-url}"
 >    ENDPOINT = "{insert-endpoint}"
-    
 >    pid = "{insert-pid}"
 
 > Now, go to the Settings of your custom vision model project to find the training_key, ENDPOINT, and pid which is under 'Key', 'Endpoint' and 'Project Id' respectively: 
