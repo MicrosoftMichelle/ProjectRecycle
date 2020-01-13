@@ -1,12 +1,9 @@
 # Project Recycle
 
 Project Recycle was my first technical project when I joined Microsoft in 2019. The inspiration for this project came from the bins located in the Melbourne office. 
-
 In the Melbourne office, the rubbish that we throw away is separated into 3 bins: 
 General Waste, Recycle, and Organic Waste. 
-
 Mindful of waste contamination, I would always stop and read the signs carefully before throwing my rubbish away and then came the "Aha!" moment for me. 
-
 What if we could leverage some of our powerful Azure services and build something to help classify our rubbish. 
 With that in mind, I began Project Recycle....  
 
@@ -119,7 +116,8 @@ Non-Azure things included:
 > ![Find training key, endpoint, and project id](images/custom-vision-settings.jpg)
 
 ## Set up Azure Storage:
-> Now let's create an Azure Storage account to store all the images we capture from the Raspberry Pi. 
+> Just like everyone who throws things they don't know what to do with into their garage, let's throw our images into an Azure Storage account. 
+> I'm just kidding, we actually need those images so let's create an Azure Storage account to store all the images we capture from the Raspberry Pi. 
 > First, go to your Azure portal and look up 'Storage account' and create one following these configurations: 
 > ![Create an Azure storage account](images/create-azure-storage-account.jpg)
 
@@ -147,8 +145,8 @@ Non-Azure things included:
 > ```Python
 > storage_account_url = "{insert-storage-account-url}"
 
-## Create Azure SQL Database: 
-> We want a way to store the data in a structured or semi-structured way so that on the other end, we can query it from an application later on. 
+## Create an Azure SQL Database: 
+> We want a way to store the data in a structured or semi-structured way so that on the other end, we can query it from an application later on. Why? Mainly to show off (the power of our model)!
 
 > First, we will create an Azure SQL Database from the portal: 
 > ![Create Azure SQL Database](images/create-sql-database.jpg)
@@ -178,6 +176,12 @@ Non-Azure things included:
 
 > Again, if you have Azure Data Studio installed, you can alternatively do the same thing using Azure Data Studio: 
 > ![You can execute the same query in Azure Data Studio](images/azure-data-studio.jpg)
+
+## Use Logic Apps to save you the pain: 
+> I spent about a week trying to insert the data directly from the Raspberry Pi into my SQL Database. Then I spent another week crying because everything keeps breaking. And then I realised that my Raspberry Pi could get compromised so in fear of my device being hacked and someone gaining access to my database credentials, I started looking into Logic Apps...
+
+> We are going to create a Logic App and ask it (politely) to insert the data into the database. 
+> ![Create a logic app](images/create-logic-app.jpg)
 
 
 
