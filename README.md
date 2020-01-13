@@ -74,7 +74,18 @@ Non-Azure things included:
 > For testing data, download it from [here](https://projectrecycledata.blob.core.windows.net/customvisionmodeldata/testing-data.zip).
 
 > For the training data, I have put them into categories within each label:
-> ![Training Data Categories](images/general-data-category.jpg)
+> ![Training data categories](images/general-data-category.jpg)
+> Again, you can use all of the image data here, some of it, none of it, or add your own to it. This one for example will all be classified (labelled) as General Waste in the model. These are the only ones I could think of but of course there is more than that (otherwise we would have less rubbish in the world). Just keep in mind that the more data we have, the better our model would perform in the real world. 
+
+> Now, go back to [Custom Vision](https://www.customvision.ai/) and navigate into the new project you have just created. 
+> Once you've gathered your data sets, add these images to your Custom Vision model: 
+> ![Adding images to Custom Vision model](images/custom-vision-model-add-images.jpg)
+> And give it a label: general, recycle, or organic 
+> ![Classifying the images by a label](images/custom-vision-model-upload-images.jpg)
+> Repeat for the other labels until you have added all images for all 3 labels (general, recycle, organic) into the project: 
+> ![Custom vision model with all images uploaded](images/general-waste-training.jpg)
+
+
 
 
 
