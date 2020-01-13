@@ -108,16 +108,16 @@ Non-Azure things included:
 > Now, grab the Prediction-Key and insert it into prediction_key in ['RaspberryPiCode.py'](code/RaspberryPiCode.py):
 > ```Python
 > def custom_vision(image_name):
-    # Establishing key connections: 
-    training_key = "{insert-training-key}"
-    prediction_key = "{insert-prediction-key}"    
-    storage_account_url = "{insert-storage-account-url}"
-    ENDPOINT = "{insert-endpoint}"
+>    # Establishing key connections: 
+>    training_key = "{insert-training-key}"
+>    prediction_key = "{insert-prediction-key}"    
+>    storage_account_url = "{insert-storage-account-url}"
+>    ENDPOINT = "{insert-endpoint}"
     
-    pid = "{insert-pid}"
+>    pid = "{insert-pid}"
 
 > Now, go to the Settings of your custom vision model project to find the training_key, ENDPOINT, and pid which is under 'Key', 'Endpoint' and 'Project Id' respectively: 
-> ![Find training key, endpoint, and project id](images/custom-vision-model-settings.jpg)
+> ![Find training key, endpoint, and project id](images/custom-vision-settings.jpg)
 
 
 
