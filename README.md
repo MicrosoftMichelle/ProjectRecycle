@@ -69,6 +69,12 @@ Non-Azure things included:
 > Now go sign into [Custom Vision](https://www.customvision.ai/) and create a new project: 
 > ![Create a new project in Custom Vision](images/custom-vision-new-project.jpg)
 
+> You can truly CUSTOMISE this by creating your own dataset. Or, if like me, you can't be bothered. You can use the ones I used. I'm not a data scienctist so I sourced most of these off Google Images. You can combine the ones I've used here with your own as well. 
+> For training data, download it from [here](https://projectrecycledata.blob.core.windows.net/customvisionmodeldata/training-data.zip).
+> For testing data, download it from [here](https://projectrecycledata.blob.core.windows.net/customvisionmodeldata/testing-data.zip).
+
+> For the training data, I have put them into categories within each label:
+> ![Training Data Categories](images/general-data-category.jpg)
 
 
 
