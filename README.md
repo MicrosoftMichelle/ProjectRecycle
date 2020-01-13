@@ -105,6 +105,22 @@ Non-Azure things included:
 > Once you're satisfied with the performance, you can choose to publish that specific Iteration of the model. This will then give you a prediction API which you can then call to use your model: 
 > ![Publish your model to get Prediction API](images/custom-vision-model-prediction-url.jpg)
 
+> Now, grab the Prediction-Key and insert it into prediction_key in ['RaspberryPiCode.py'](code/RaspberryPiCode.py):
+> ```Python
+> def custom_vision(image_name):
+    # Establishing key connections: 
+    training_key = "{insert-training-key}"
+    prediction_key = "{insert-prediction-key}"    
+    storage_account_url = "{insert-storage-account-url}"
+    ENDPOINT = "{insert-endpoint}"
+    
+    pid = "{insert-pid}"
+
+> Now, go to the Settings of your custom vision model project to find the training_key, ENDPOINT, and pid which is under 'Key', 'Endpoint' and 'Project Id' respectively: 
+> ![Find training key, endpoint, and project id](images/custom-vision-model-settings.jpg)
+
+
+
 
 
 
