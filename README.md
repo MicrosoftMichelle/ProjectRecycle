@@ -170,7 +170,14 @@ Non-Azure things included:
 >	ClassifiedAs varchar(50) NULL
 > )
 
+> Navigate to the Query editor and login to your SQL server (I hope you remembered your username and password!):
+> ![Login to SQL server](images/sql-login.jpg)
 
+> Then paste that query you just copied into the query editor and hit 'Run':
+> ![Create a table by running query](images/create-predictions-table-query.jpg)
+
+> Again, if you have Azure Data Studio installed, you can alternatively do the same thing using Azure Data Studio: 
+> ![You can execute the same query in Azure Data Studio](images/azure-data-studio.jpg)
 
 
 
