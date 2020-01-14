@@ -250,7 +250,7 @@ And paste the below JSON schema into 'Request Body JSON Schema'. You might have 
 > ![Add ClassifiedAs as an extra parameter](images/logic-app-add-parameter.jpg)
 
 > This is what the completed Logic App should look like. Once complete, hit the Save button to save your Logic App:
-> ![Completed Logic App](images/logic-app-complete)
+> ![Completed Logic App](images/logic-app-complete.jpg)
 
 
 
