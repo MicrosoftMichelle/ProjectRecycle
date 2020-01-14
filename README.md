@@ -240,9 +240,18 @@ And paste the below JSON schema into 'Request Body JSON Schema'. You might have 
 >    },
 >    "type": "object"
 > }
-> [Paste JSON schema into Body Request](images/paste-json-sample.jpg)
 
->
+> ![Paste JSON schema into Body Request](images/paste-json-sample.jpg)
+
+> Go back to the 'Insert row' connector and click on the box next to ImageUrl. A new box should appear. If you don't see anything under Dyanmic content, click on 'See more'. Then add the ImageUrl and repeat for GeneralWasteProb, RecycleProb, and OrganicProb:
+> ![Add dynamic content to the connector](images/logic-app-add-image-url.jpg)
+
+> For the ClassifiedAs parameter, click on the 'Add new parameter' drop down and check the ClassifiedAs box: 
+> ![Add ClassifiedAs as an extra parameter](images/logic-app-add-parameter.jpg)
+
+> This is what the completed Logic App should look like. Once complete, hit the Save button to save your Logic App:
+> ![Completed Logic App](images/logic-app-complete)
+
 
 
 
