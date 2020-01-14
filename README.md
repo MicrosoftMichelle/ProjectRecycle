@@ -39,7 +39,7 @@ Non-Azure things included:
 
 ## Let's load some code into your Raspberry Pi: 
 > Now, go to the browser on the Raspberry Pi. Find this GitHub Repo, go into the 'code' folder and pull down the code the says ['RaspberryPiCode.py'](code/RaspberryPiCode.py) onto the device. 
-> I just saved mine to the desktop of the Raspberry Pi for ease of access.
+> I saved mine to the desktop of the Raspberry Pi for ease of access.
 
 ## Setting up IoT on Azure: 
 > Let's start with a Resource Group. The first thing you want to provision is a Resource Group which is a logical container or 'folder' to group all the resources related to this project: 
@@ -182,6 +182,73 @@ Non-Azure things included:
 
 > We are going to create a Logic App and ask it (politely) to insert the data into the database. 
 > ![Create a logic app](images/create-logic-app.jpg)
+
+> Once your logic app has been created, open it up and it should take you to the Logic App Designer screen. Here you want to select 'When a HTTP request is retreived' as the trigger for the Logic App. This means when something calls this HTTP that has been assigned to the Logic App, the Logic App will run. 
+> ![Select an Http trigger for Logic App](images/logic-app-http-trigger.jpg)
+
+> Ok, now hit that 'Save' button and a HTTP Post URL should be generated for you. Copy it:
+> ![Logic App Http Trigger Url](images/logic-app-url-copy.jpg)
+
+> And insert it into url in the ['RaspberryPiCode.py'](code/RaspberryPiCode.py) code: 
+> ``` Python
+> def http_post(payload):
+>    try:
+>        url = "{insert-logic-app-trigger}"
+>        headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+>        r = requests.post(url, data=json.dumps(payload), headers=headers)      
+>        print("Success: ", r.status_code, r.reason)
+>    except Exception as e:
+>        print("Error in HTTP Post: ", e)
+
+> Now, click '+ New step' and search for 'SQL' to add the SQL Database connector to the Logic App: 
+> ![Add SQL Database connector to Logic App](images/logic-app-sql-connector.jpg)
+
+> For the action, we want to select 'Insert row': 
+> ![Select Insert Row for the SQL connector](images/logic-app-sql-insert-row.jpg)
+
+> Select 'SQL Server Authentication' as the Authentication Type and enter your credentials: 
+> ![Select SQL Server Authentication](images/logic-app-sql-authentication.jpg)
+
+> To find your SQL server name and database name, open another instance of your Azure portal, search for the SQL Database you created earlier and you can find it on the Overview pane: 
+> ![Overview pane of your Azure SQL Database](images/sql-database-overview.jpg)
+
+> Now, use the drop-downs to pass in the connection strings for the Server name and Database name and select the 'Predictions' table:
+> ![Pass in the default connection strings and select the Predictions table](images/logic-app-sql-connection-strings.jpg)
+
+> Open up the HTTP trigger connector:
+> ![Open up the Http Trigger Connector again](images/open-up-http-connector.jpg)
+
+And paste the below JSON schema into 'Request Body JSON Schema'. You might have to manually type this in (sorry!): 
+> ```JSON
+> {
+>    "properties": {
+>        "ClassifiedAs": {
+>            "type": "string"
+>        },
+>        "GeneralWasteProb": {
+>            "type": "number"
+>        },
+>        "ImageUrl": {
+>            "type": "string"
+>        },
+>        "OrganicProb": {
+>            "type": "number"
+>        },
+>        "RecycleProb": {
+>            "type": "number"
+>        }
+>    },
+>    "type": "object"
+> }
+> [Paste JSON schema into Body Request](images/paste-json-sample.jpg)
+
+>
+
+
+
+
+
+
 
 
 
