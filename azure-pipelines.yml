@@ -36,13 +36,6 @@ stages:
       displayName: 'Install Node.js'
 
     - script: |
-        if [ -f extensions.csproj ]
-        then
-            dotnet build extensions.csproj --runtime ubuntu.16.04-x64 --output ./bin
-        fi
-      displayName: 'Build extensions'
-
-    - script: |
         npm install
         npm run build --if-present
         npm run test --if-present
