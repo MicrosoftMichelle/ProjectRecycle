@@ -37,8 +37,7 @@ stages:
 
     - script: |
         npm install
-        npm run build 
-      displayName: 'Prepare binaries'
+      displayName: 'npm install'
       
     - task: ArchiveFiles@2
       displayName: 'Archive files'
