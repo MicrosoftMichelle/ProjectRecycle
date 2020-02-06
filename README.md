@@ -117,7 +117,7 @@ Non-Azure things included:
 
 ## Set up Azure Storage:
 > Just like everyone who throws things they don't know what to do with into their garage, let's throw our images into an Azure Storage account. 
-> I'm just kidding, we actually need those images so let's create an Azure Storage account to store all the images we capture from the Raspberry Pi. 
+> I'm just kidding, we actually need those images so let's create an Azure Storage account to store all the images we captured from the Raspberry Pi. 
 > First, go to your Azure portal and look up 'Storage account' and create one following these configurations: 
 > ![Create an Azure storage account](images/create-azure-storage-account.jpg)
 
@@ -251,6 +251,69 @@ And paste the below JSON schema into 'Request Body JSON Schema'. You might have 
 
 > This is what the completed Logic App should look like. Once complete, hit the Save button to save your Logic App:
 > ![Completed Logic App](images/logic-app-complete.jpg)
+
+## Let's Stream Analytics into our SQL DB
+> Azure Stream Analytics is a real-time analytics tool that can be used to process real-time events in high volumes. 
+Stream Analytics is made up of: Input, Query, and Output. The input can be data ingested from Azure Event Hubs, Azure IoT Hub, or Azure Blob Storage. The query that you write has a similar syntax to SQL. You can use it to filter, sort, aggregate, and join streaming data over a certain period of time.  
+
+> First off, let's go and create a Stream Analytics instance: 
+> ![Create a Stream Analytics instance](images/create-stream-analytics.jpg)
+
+> Now go to inputs and add our IoT Hub as our input to indicate we will be streaming data into our Stream Analytics through IoT Hub: 
+> ![Add IoT Hub as input to our Stream Analytics job](images/stream-analytics-add-input.jpg)
+> And configure your input to connect to the IoT Hub you created earlier: 
+> ![Configure your Stream Analytics input](images/stream-analytics-configure-input.jpg)
+
+> Whenever there is an input, there is an output. Isn't that a saying or am I just making it up? 
+> Anyway, set up the output of your Stream Analytics job to output the data to your SQL database: 
+> ![Set up Stream Analytics output to SQL DB](images/stream-analytics-add-output.jpg)
+> Again, make sure you connect it to your SQL Database instance: 
+> [Configure your Stream Analytics output](images/stream-analytics-configure-output.jpg)
+
+> Great job (but we are not done yet)! We need to write a query to stream the data from out input source to our output source:
+> ```SQL 
+> SELECT
+>    sensor-input.temperature AS Temperature,
+>    sensor-input.humidity AS Humidity,
+>    sensor-input.pressure AS Pressure,
+>    sensor-input.compass AS Compass,
+>    sensor-input.gyroscope.yaw AS GyroscopeYaw,
+>    sensor-input.gyroscope.roll AS GyroscopeRoll,
+>    sensor-input.gyroscope.pitch AS GyroscopePitch,
+>    sensor-input.orientation.yaw AS OrientationYaw,
+>    sensor-input.orientation.roll AS OrientationRoll,
+>    sensor-input.orientation.pitch AS OrientationPitch,
+>    sensor-input.accelerometer.yaw AS AccelerometerYaw,
+>    sensor-input.accelerometer.roll AS AccelerometerRoll,
+>    sensor-input.accelerometer.pitch AS AccelerometerPitch,
+>    sensor-input.currentdatetime AS CurrentDateTime
+>    INTO
+>        sensor-output
+>    FROM
+>        sensor-input
+
+> Take the piece of code above (or you can write whatever query you want, it's your project after all) and paste it in as the Stream Analytics query. Remember to save it!
+> ![Write a query for the Stream Analytics job](images/stream-analytics-query.jpg)
+
+> Now go back to the Overview tab of your Stream Analytics and make sure you press 'Start' to start your stream analytics job:
+> ![Start your Stream Analytics job](images/start-stream-analytics.jpg)
+
+> If not already, switch your Raspberry Pi on (make sure the sensehat is attached). Go and find this line of code from ['RaspberryPiCode.py'](code/RaspberryPiCode.py):
+> ```python 
+> # iothub_client_telemetry_run()
+
+> Uncomment it out (remove that hashtag at the front). Save the script and run it. Now move your Raspberry Pi around, put a little pressure on it (but don't bully it too much), make it into the sun or into a dark corner. Then what I do is turn my Stream Analytics job off because it can rack up quite a bit on my Azure bill if I leave it switched on (learnt this the hard way unfortunately). 
+
+> Using Azure Data Studio or the Query editor in Azure SQL DB, I can run a simple: 
+> ```SQL 
+> SELECT * 
+> FROM SensorData 
+
+> Query the database and get results similar to this: 
+> ![Query the SensorData table](images/sensor-data-query.jpg)
+
+
+
 
 
 
