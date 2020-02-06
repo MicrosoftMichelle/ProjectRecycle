@@ -267,6 +267,7 @@ Stream Analytics is made up of: Input, Query, and Output. The input can be data 
 > Whenever there is an input, there is an output. Isn't that a saying or am I just making it up? 
 > Anyway, set up the output of your Stream Analytics job to output the data to your SQL database: 
 > ![Set up Stream Analytics output to SQL DB](images/stream-analytics-add-output.jpg)
+
 > Again, make sure you connect it to your SQL Database instance: 
 > ![Configure your Stream Analytics output](images/stream-analytics-configure-output.jpg)
 
