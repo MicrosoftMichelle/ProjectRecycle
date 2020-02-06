@@ -7,39 +7,38 @@ variables:
   vmImageName: 'ubuntu-latest'
 
 stages:
-- stage: Build
-  displayName: Build stage
-  jobs:  
-  - job: Build
-    displayName: Build
-    pool:
-      vmImage: $(vmImageName)
-      
-    steps:
-    - task: NodeTool@0
-      inputs:
-        versionSpec: '10.x'
-      displayName: 'Install Node.js'
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
 
-    - script: |
-        npm install
-      displayName: 'npm install'
+- script: npm install
+  displayName: 'npm install'
 
-    - task: CopyFiles@2
-      inputs:
-        SourceFolder: '$(System.DefaultWorkingDirectory)/code/functions/getGeneral-API'
-        Contents: '**'
-        TargetFolder: '$(Build.ArtifactStagingDirectory)'
-      
-    - task: ArchiveFiles@2
-      displayName: 'Archive files'
-      inputs:
-        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
-        includeRootFolder: false
-        archiveType: zip
-        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-        replaceExistingArchive: true
+- script: npm build
+displayName: 'npm build'
 
-    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-      artifact: drop
+- task: ArchiveFiles@2
+displayName: 'Archive files'
+inputs:
+  rootFolderOrFile: '$(Build.SourcesDirectory)/code/function'
+  includeRootFolder: false
+  archiveType: 'zip'
+  archiveFile: '$(Build.SourcesDirectory)/drop.zip'
+  replaceExistingArchive: true
+
+- task: CopyFiles@2
+  displayName: 'Copy ARM templates'
+  inputs:
+    contents: 'drop.zip'
+    sourceFolder: '$(Build.SourcesDirectory)'
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+    cleanTargetFolder: true
+    overWrite: true
+
+- task: PublishPipelineArtifact@0
+  inputs:
+    artifactName: 'drop' 
+    targetPath: '$(Build.ArtifactStagingDirectory)'
 
