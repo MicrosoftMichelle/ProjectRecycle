@@ -302,7 +302,7 @@ Stream Analytics is made up of: Input, Query, and Output. The input can be data 
 > ```python 
 > # iothub_client_telemetry_run()
 
-> Uncomment it out (remove that hashtag at the front). Save the script and run it. Now move your Raspberry Pi around, put a little pressure on it (but don't bully it too much), make it into the sun or into a dark corner. Then what I do is turn my Stream Analytics job off because it can rack up quite a bit on my Azure bill if I leave it switched on (learnt this the hard way unfortunately). 
+> Uncomment it out (remove that hashtag at the front). Save the script and run it. Now move your Raspberry Pi around, put a little pressure on it (but don't bully it too much), take it into the sun or into a dark corner. Then what I do is turn my Stream Analytics job off because it can rack up quite a bit on my Azure bill if I leave it switched on (learnt this the hard way unfortunately). 
 
 > Using Azure Data Studio or the Query editor in Azure SQL DB, I can run a simple: 
 > ```SQL 
