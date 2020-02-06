@@ -1,21 +1,7 @@
-# Node.js Function App to Linux on Azure
-# Build a Node.js function app and deploy it to Azure as a Linux function app.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
 trigger:
 - master
 
 variables:
-
-  # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: '86087800-79e1-4f4d-8105-f2f3f989e46a'
-
-  # Function app name
-  functionAppName: 'demo-project-recycle'
- 
-  # Environment name
-  environmentName: 'demo-project-recycle'
  
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -38,11 +24,17 @@ stages:
     - script: |
         npm install
       displayName: 'npm install'
+
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(System.DefaultWorkingDirectory)/code/functions/getGeneral-API'
+        Contents: '**'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
       
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/code/functions/getGeneral-API'
+        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
         includeRootFolder: false
         archiveType: zip
         archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
@@ -51,24 +43,3 @@ stages:
     - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       artifact: drop
 
-- stage: Deploy
-  displayName: Deploy stage
-  dependsOn: Build
-  condition: succeeded()
-  jobs:
-  - deployment: Deploy
-    displayName: Deploy
-    environment: $(environmentName)
-    pool: 
-      vmImage: $(vmImageName)
-    strategy:
-      runOnce:
-        deploy:
-          steps:            
-          - task: AzureFunctionApp@1
-            displayName: 'Azure Functions App Deploy: demo-project-recycle'
-            inputs:
-              azureSubscription: '$(azureSubscription)'
-              appType: functionAppLinux
-              appName: $(functionAppName)
-              package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
