@@ -35,6 +35,12 @@ stages:
         versionSpec: '10.x'
       displayName: 'Install Node.js'
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'code/functions/getGeneral-API'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+
     - script: |
         npm install
         npm run build --if-present
